@@ -78,11 +78,32 @@
                         <li>
                             <a href="https://www.facebook.com/Radiofuego106.1" target="_blank"><img src="img/facebook.png" alt="facebook" width="48" height="48"></a>
                             <a href="https://radiofuegolima.blogspot.com" target="_blank"><img src="img/instagram.png" alt="instagram" width="48" height="48"></a>
+                            <a href="https://radiofuegolima.blogspot.com" target="_blank"><img src="img/tiktok.png" alt="instagram" width="48" height="48"></a>
+                            <a href="https://wa.me/51999276136" target="_blank"><img src="img/whatsapp.png" alt="whatsapp" width="48" height="48"></a></button>
 
-
-                               <a href="https://radiofuegolima.blogspot.com" target="_blank"><img src="img/tiktok.png" alt="instagram" width="48" height="48"></a>
-                               
-                            <a href="https://wa.me/51999276136" target="_blank"><img src="img/whatsapp.png" alt="whatsapp" width="48" height="48"></a>
+				</main>
+  <script>
+    const $button = document.querySelector('#button')
+    if ('share' in navigator) {
+      $button.addEventListener('click', share)
+      function share() {
+        navigator.share({
+          title: 'Probando Share API',
+          text: 'Compartimos Nuestra Aplicación',
+          url: 'https://reproduc.github.io/MarielaApp/',
+        })
+        .then(()=>{
+          alert('hemos logrado compartir')
+        })
+        .catch(()=>{
+          alert('no se pudo compartir, prueba usando https en un navegador móvil')
+        })
+      }
+    } else {
+      alert('No está disponible el API de web share')
+    }
+  </script>
+				
                             </li>
                         <p>Radio Fuego 106.1Fm - Oficial</p>
                     </ul>
